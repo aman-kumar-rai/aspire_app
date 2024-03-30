@@ -28,7 +28,10 @@
       "@components/*": [
         "./src/components/*"
       ]
-    }
+    },
+    "types": [
+      "vitest/globals"
+    ]
   },
   "include": [
     "src"
