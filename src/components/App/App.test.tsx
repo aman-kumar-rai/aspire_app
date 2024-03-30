@@ -7,7 +7,8 @@ it("can run basic js test", () => {
 })
 
 
-it("renders App component", () => {
+it("renders App component", async () => {
     render(<App />);
-    screen.findByRole("heading");
+    const el = await screen.findByRole("heading");
+    expect(el).toBeVisible();
 })
