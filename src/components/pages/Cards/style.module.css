@@ -1,8 +1,37 @@
 .container {
     width: 100%;
     height: 100%;
-    display: flex;
+    /* display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--neutral-white);
+    background-color: var(--neutral-white); */
+}
+
+.icon{
+    width: 32px;
+    height: 32px;
+}
+
+.header{
+
+}
+
+.tabSection{
+    display: flex;
+}
+
+.main{
+    display: flex;
+    flex-direction: row;
+    padding: 60px 40px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 2px lightgray;
+}
+
+.leftPanel{
+
+}
+
+.rightPanel{
+
 }
