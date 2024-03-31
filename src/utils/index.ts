@@ -87,6 +87,14 @@ const generateTransactions = (size = 3): TransactionType[] => {
     return transactions;
 }
 
+const generateInitialCards = (size = 2): CardType[] => {
+    const cards = [];
+    for (let i = 0; i < size; i++) {
+        cards.push(generateCard());
+    }
+    return cards;
+}
+
 export {
     generateCardNumber,
     generateAmount,
@@ -94,6 +102,7 @@ export {
     generateTransaction,
     generateTransactions,
     generateCard,
+    generateInitialCards,
     formatExpiryDate,
     formatDate
 }
