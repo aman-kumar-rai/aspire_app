@@ -12,7 +12,7 @@ const Card = ({
     isFrozen
 }: CardType) => {
     return (
-        <div className={styles.container} key={cardNumber}>
+        <div className={styles.container} key={cardNumber} data-state={isFrozen ? "frozen" : "non-frozen"}>
             <div className={styles.aspireLogo}>
                 <Logo
                     label={"Aspire"}
