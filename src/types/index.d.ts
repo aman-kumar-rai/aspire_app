@@ -1,6 +1,6 @@
 import { Currency } from "@faker-js/faker"
 
-type TransactionType = {
+interface TransactionType {
     amount: number,
     type: "credit" | "debit",
     date: Date,
@@ -43,8 +43,13 @@ type CardControlsProps = {
     handleToggleFreezeCard: () => void
 }
 
+interface TransactionProps extends TransactionType {
+    currency: string
+}
+
 export {
     TransactionType,
+    TransactionProps,
     CardType,
     IconProps,
     CardHeaderProps,
