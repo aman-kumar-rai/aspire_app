@@ -1,0 +1,13 @@
+:root {
+    --font-primary: "Open Sans", sans-serif;
+    --font-secondary: "Avenir Next", sans-serif;
+
+
+    --text-xxs: 12px;
+    --text-xs: 13px;
+    --text-sm: 14px;
+    --text-md: 15px;
+    --text-body: 16px;
+    --text-lg: 24px;
+    --text-xl: 26px;
+}

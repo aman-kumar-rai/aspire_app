@@ -1,0 +1,20 @@
+:root {
+    --primary: #0C365A;
+    --secondary: #01D167;
+
+    --accent-light: #23CEFD;
+    --accent-dark: #325BAF;
+
+    --bg-light-green: #DDFFEC;
+    --bg-light-red: #F251951A;
+    --bg-light-blue: #009DFF1A;
+    --bg-accordion: #F5F9FF;
+
+    --text-dark: #222222;
+
+    --neutral-white: #FFFFFF;
+    --neutral-right-section-bg: #FCFCFC;
+    --neutral-right-section-box-shadow: #00000014;
+    --neutral-accordion-border: #F5F5F5;
+    --neutral-accordion-box-shadow: #0000000A;
+}
