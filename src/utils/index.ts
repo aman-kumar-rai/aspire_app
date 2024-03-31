@@ -20,7 +20,7 @@ const generateName = (): string => {
     return faker.person.fullName();
 }
 
-const getCurrency = (): Currency => {
+const generateCurrency = (): Currency => {
     return faker.finance.currency();
 }
 
@@ -53,7 +53,7 @@ const generateAmount = (min = 1000, max = 5000, dec = 2): number => {
 const generateCard = (name?: string, transactionsCount = 3): Card => {
     return {
         name: name ? name : generateName(),
-        currency: getCurrency(),
+        currency: generateCurrency(),
         cardNumber: generateCardNumber(),
         expiry: generateDate(
             new Date(),
@@ -91,6 +91,10 @@ const generateTransactions = (size = 3): Transaction[] => {
 
 export {
     generateCardNumber,
+    generateAmount,
+    generateCVV,
+    generateTransaction,
+    generateTransactions,
     generateCard,
     formatExpiryDate,
     formatDate
