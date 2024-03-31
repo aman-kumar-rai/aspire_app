@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import styles from "./style.module.css";
 import Home from "@/components/pages/Home/Home.tsx"
 import Cards from "@/components/pages/Cards/Cards";
@@ -11,7 +11,7 @@ const Main = () => {
         <main className={styles.container}>
             <Routes>
                 <Route
-                    path="*"
+                    path="/"
                     element={<Home />}
                 />
                 <Route
@@ -29,6 +29,10 @@ const Main = () => {
                 <Route
                     path="/settings"
                     element={<Settings />}
+                />
+                <Route
+                    path="*"
+                    element={<Navigate to="/" replace />}
                 />
             </Routes>
 

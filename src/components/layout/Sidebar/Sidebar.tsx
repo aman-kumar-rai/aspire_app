@@ -9,7 +9,7 @@ import Settings from "@components/icons/Settings/Settings";
 
 const navItems = [
     {
-        id: "home",
+        id: "",
         label: "Home",
     },
     {
@@ -34,11 +34,6 @@ const navItems = [
 
 function getIcon(id, label, active) {
     switch (id) {
-        case "/":
-        case "home":
-            return (
-                <Home label={label} className={active ? "active" : ""} />
-            );
         case "cards":
             return (
                 <Cards label={label} className={active ? "active" : ""} />
@@ -55,6 +50,10 @@ function getIcon(id, label, active) {
             return (
                 <Settings label={label} className={active ? "active" : ""} />
             );
+        default:
+            return (
+                <Home label={label} className={active ? "active" : ""} />
+            );
     }
 }
 
@@ -69,6 +68,7 @@ const Sidebar = () => {
                 {navItems.map(({ id, label }) => {
                     return (
                         <NavLink
+                            key={id}
                             to={`/${id}`}
                             className={({ isActive }) => {
                                 return (isActive ? `${styles.activeNav} ${styles.nav}` : styles.nav)
