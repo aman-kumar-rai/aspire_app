@@ -1,8 +1,8 @@
 import { generateCard } from "@/utils";
-import { Card } from "@/types";
+import { CardType } from "@/types";
 
 const addCard = (name: string, transactionsCount = 3) => {
-    return new Promise<Card>((resolve): void => {
+    return new Promise<CardType>((resolve): void => {
         setTimeout(() => {
             resolve(generateCard(name, transactionsCount));
         }, 100 + Math.floor(Math.random() * 500))
