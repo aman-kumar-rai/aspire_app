@@ -1,37 +1,5 @@
 import { Currency, faker } from "@faker-js/faker";
-
-const generateName = (): string => {
-    return faker.person.fullName();
-}
-
-const getCurrency = (): Currency => {
-    return faker.finance.currency();
-}
-
-const generateCardNumber = (issuer = "visa"): string => {
-    return faker.finance.creditCardNumber({
-        issuer
-    })
-}
-
-const generateDate = (from?: Date, to?: Date): Date => {
-    return faker.date.between({
-        from,
-        to
-    })
-}
-
-const generateCVV = (): string => {
-    return faker.finance.creditCardCVV();
-}
-
-const generateAmount = (min = 1000, max = 5000, dec = 2): string => {
-    return faker.finance.amount({
-        min,
-        max,
-        dec
-    })
-}
+import { Transaction, Card } from "@/types";
 
 const formatExpiryDate = (date: Date): string => {
     const month = date.getMonth();
@@ -48,13 +16,49 @@ const formatDate = (date: Date): string => {
     return `${day} ${month} ${year}`
 }
 
-// todo: add return type declaration
-const generateCard = (name?: string, transactionsCount = 3) => {
+const generateName = (): string => {
+    return faker.person.fullName();
+}
+
+const getCurrency = (): Currency => {
+    return faker.finance.currency();
+}
+
+const generateCardNumber = (issuer = "visa"): string => {
+    return faker.finance.creditCardNumber({
+        issuer
+    })
+}
+
+const generateDate = (from: Date, to: Date): Date => {
+    return faker.date.between({
+        from,
+        to
+    })
+}
+
+const generateCVV = (): string => {
+    return faker.finance.creditCardCVV();
+}
+
+const generateAmount = (min = 1000, max = 5000, dec = 2): number => {
+    const amount = faker.finance.amount({
+        min,
+        max,
+        dec
+    })
+    return Number(amount);
+}
+
+const generateCard = (name?: string, transactionsCount = 3): Card => {
     return {
         name: name ? name : generateName(),
         currency: getCurrency(),
         cardNumber: generateCardNumber(),
-        expiry: formatExpiryDate(generateDate()),
+        expiry: generateDate(
+            new Date(),
+            new Date(2030, 11)
+        ),
         cvv: generateCVV(),
         balance: generateAmount(),
         isFrozen: false,
@@ -68,17 +72,16 @@ const generatePastDate = (refDate: Date = new Date()): Date => {
     })
 }
 
-// todo: add return type declaration
-const generateTransaction = (min = 10, max = 500, dec = 2) => {
+const generateTransaction = (min = 10, max = 500, dec = 2): Transaction => {
     return {
         amount: generateAmount(min, max, dec),
         type: Math.random() > 0.5 ? "credit" : "debit",
-        date: formatDate(generatePastDate()),
+        date: generatePastDate(),
         merchant: faker.company.name()
     }
 }
 
-const generateTransactions = (size = 3) => {
+const generateTransactions = (size = 3): Transaction[] => {
     const transactions = [];
     for (let i = 0; i < size; i++) {
         transactions.push(generateTransaction())
@@ -87,5 +90,7 @@ const generateTransactions = (size = 3) => {
 }
 
 export {
-    generateCard
+    generateCard,
+    formatExpiryDate,
+    formatDate
 }

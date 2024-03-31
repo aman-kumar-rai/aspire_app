@@ -1,6 +1,5 @@
 import { generateCard } from "@/utils"
 
-
 const addCard = (name: string) => {
     return new Promise((resolve): void => {
         setTimeout(() => {
