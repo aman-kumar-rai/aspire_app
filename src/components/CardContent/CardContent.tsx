@@ -7,6 +7,7 @@ import cancelCard from "@assets/cancelCard.png";
 import Eye from "@assets/eye.png"
 
 import CardControls from "@/components/CardControls/CardControls";
+// import Transaction from "@components/Transaction/Transaction";
 import Card from "@/components/Card/Card";
 
 import styles from "./style.module.css";
@@ -50,7 +51,6 @@ const CardContent = ({
         setShowCardNumber(prev=>!prev)
     }
     return (
-        <div>
             <Tabs.Root defaultValue="myDebitCards">
                 <Tabs.List className={styles.tabsList} aria-label="Manage your cards">
                     <Tabs.Trigger data-state={"active"} className={`${styles.tabsTrigger} ${styles.activeTab}`} value="myDebitCards">
@@ -75,11 +75,10 @@ const CardContent = ({
                         />
                     </div>
                     <div className={styles.rightPanel}>
-                        Accordion
+                        {/* <Transaction/> */}
                     </div>
                 </Tabs.Content>
             </Tabs.Root>
-        </div>
     )
 }
 

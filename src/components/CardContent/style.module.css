@@ -1,6 +1,7 @@
 .tabsList {
     display: flex;
     column-gap: var(--space-32);
+    margin-top: var(--space-32);
   }
 
 .tabsTrigger{
@@ -24,6 +25,7 @@
     border-radius: 10px;
     margin-top: 20px;
     box-shadow: 2px 2px 2px 2px lightgray;
+    column-gap: var(--text-xl);
 }
 
 .eye{
@@ -48,4 +50,8 @@
     line-height: var(--line-height-md);
     align-items: center;
     cursor: pointer;
+}
+
+.leftPanel{
+    width: 50%;
 }
