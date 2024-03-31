@@ -1,6 +1,8 @@
 :root {
     --font-primary: "Open Sans", sans-serif;
     --font-secondary: "Avenir Next", sans-serif;
+    
+    --font-weight-bold: bold;
 
 
     --text-xxs: 12px;
