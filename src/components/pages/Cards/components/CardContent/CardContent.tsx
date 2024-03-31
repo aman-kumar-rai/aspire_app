@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Slider from "react-slick";
 import * as Tabs from "@radix-ui/react-tabs";
 import * as Accordion from "@radix-ui/react-accordion";
 import Eye from "@assets/eye.png";
@@ -6,14 +7,12 @@ import DownArrow from "@assets/downArrow.png";
 import UpArrow from "@assets/upArrow.png";
 import CardDetails from "@assets/cardDetails.png";
 import RecentTransaction from "@assets/recentTransaction.png";
-
 import CardControls from "@/components/pages/Cards/components/CardControls/CardControls";
 import { AccordionContent, AccordionTrigger } from "@components/pages/Cards/components/Accordion/Accordion";
 import Transaction from "@components/pages/Cards/components/Transaction/Transaction";
 import CarouselItem from "@/components/pages/Cards/components/CarouselItem/CarouselItem";
 import { CardContentProps } from "@/types";
 import styles from "./style.module.css";
-
 
 const CardContent = ({
     cards,
@@ -23,9 +22,20 @@ const CardContent = ({
 }: CardContentProps) => {
 
     const [showCardNumber, setShowCardNumber] = useState(false);
-
     const handleCardNumberVisibility = () => {
         setShowCardNumber(prev => !prev);
+    }
+
+    const handleCardClick = (prevIndex: number, currentIndex: number) => {
+        console.log(prevIndex, currentIndex);
+    }
+
+    const settings = {
+        autoplay: false,
+        arrows: false,
+        dots: true,
+        dotsClass: "",
+        beforeChange: handleCardClick
     }
 
     return (
@@ -47,16 +57,24 @@ const CardContent = ({
                         </button>
                     </div>
 
-                    <CarouselItem
-                        {...cards[currentCardIndex]}
-                    />
+
+                    <div className={styles.carousel}>
+                        <Slider {...settings}>
+                            {cards.map(card => (
+                                <CarouselItem
+                                    key={card.cardNumber}
+                                    {...card}
+                                />
+                            ))}
+                        </Slider>
+                    </div>
 
                     <CardControls
                         handleToggleFreezeCard={handleToggleFreezeCard}
                     />
                 </div>
                 <div className={styles.rightPanel}>
-                <Accordion.Root type="single" defaultValue="recentTransaction" collapsible>
+                    <Accordion.Root type="single" defaultValue="recentTransaction" collapsible>
                         <Accordion.Item className="AccordionItem" value="cardDetails">
                             <AccordionTrigger disabled>
                                 <span className={styles.triggerHeading}>
@@ -68,22 +86,22 @@ const CardContent = ({
                         </Accordion.Item>
                         <Accordion.Item className={styles.accordionItem} value="recentTransaction">
                             <AccordionTrigger>
-                            <span className={styles.triggerHeading}>
-                                <img src={RecentTransaction} alt="recentTransaction" className={styles.triggerLogo} />
-                                <p>Recent Transaction</p>
-                            </span>
-                            <img src={DownArrow} className={styles.arrowLogo} />
-                        </AccordionTrigger>
-                        <AccordionContent>
-                            <Transaction/>
-                            <Transaction/>
-                            <Transaction/>
-                            <Transaction/>
-                            <Transaction/>
-                            <Transaction/>
-                        </AccordionContent>
-                    </Accordion.Item>
-                </Accordion.Root>
+                                <span className={styles.triggerHeading}>
+                                    <img src={RecentTransaction} alt="recentTransaction" className={styles.triggerLogo} />
+                                    <p>Recent Transaction</p>
+                                </span>
+                                <img src={DownArrow} className={styles.arrowLogo} />
+                            </AccordionTrigger>
+                            <AccordionContent>
+                                <Transaction />
+                                <Transaction />
+                                <Transaction />
+                                <Transaction />
+                                <Transaction />
+                                <Transaction />
+                            </AccordionContent>
+                        </Accordion.Item>
+                    </Accordion.Root>
                 </div>
             </Tabs.Content>
         </Tabs.Root>
