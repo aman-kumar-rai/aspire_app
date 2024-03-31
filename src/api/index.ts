@@ -1,9 +1,10 @@
-import { generateCard } from "@/utils"
+import { generateCard } from "@/utils";
+import { Card } from "@/types";
 
-const addCard = (name: string) => {
-    return new Promise((resolve): void => {
+const addCard = (name: string, transactionsCount = 3) => {
+    return new Promise<Card>((resolve): void => {
         setTimeout(() => {
-            resolve(generateCard(name))
+            resolve(generateCard(name, transactionsCount));
         }, 100 + Math.floor(Math.random() * 500))
     })
 }
