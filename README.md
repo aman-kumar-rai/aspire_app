@@ -34,4 +34,4 @@
 3. Run a local dev server by running ***npm run dev***. This will start a web server on port *5173*.
 
 ### 2. Accessing the hosted version
-Use [this link]() to use the hosted version of the app.
+Use [this link](https://fanciful-pithivier-fb61c7.netlify.app/) to use the hosted version of the app.
