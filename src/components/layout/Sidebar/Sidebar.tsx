@@ -61,7 +61,7 @@ const Sidebar = () => {
     return (
         <aside className={styles.container}>
             <div className={styles.header}>
-                <Logo label="logo" />
+                <Logo label="logo" className={"active"} />
                 <p className={styles.description}>Trusted way of banking for 3,000+ SMEs and startups in Singapore</p>
             </div>
             <nav id="sidebar" className={styles.navbar}>

@@ -1,5 +1,64 @@
 .container{
-    padding: 27px;
+    padding: var(--space-24);
     background-color: var(--secondary);
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--space-24);
+}
+
+.aspireLogo{
+    text-align: end;
+}
+
+.cardHolderName{
+    font-size: var(--text-lg);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-md);
+    color: white;
+}
+
+.cardDetails{
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--space-18);
+}
+
+.cardNumber{
+    font-size: var(--text-sm);
+    font-weight: var(--font-weight-bold);
+    color: white;
+    line-height: var(--line-height-md);
+}
+
+.cardDateCvvSection{
+    display: flex;
+    flex-direction: row;
+    column-gap: var(--space-40);
+    font-size: var(--text-sm);
+    font-weight: var(--font-weight-bold);
+    color: white;
+    line-height: var(--line-height-lg);
+    align-items: center;
+}
+
+.cvv{
+    display: flex;
+    column-gap: 5px;
+}
+
+.cvvNumber{
+    font-size: var(--text-lg);
+    font-weight: var(--font-weight-bold);
+    color: white;
+    line-height: var(--line-height-lg);
+}
+
+.type{
+    text-align: end;
+}
+
+.visa{
+    width: 70px;
+    height: 24px;
 }

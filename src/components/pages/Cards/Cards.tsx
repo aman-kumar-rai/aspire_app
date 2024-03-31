@@ -55,7 +55,7 @@ const Cards = () => {
             </div>
             <div className={styles.main}>
                 <div className={styles.leftPanel}>
-                    <Card />
+                    {/* <Card /> */}
                     <CardControls controllers={cardControllers} handleCard={handleCard} />
                 </div>
                 <div className={styles.rightPanel}>
