@@ -15,7 +15,7 @@ type CardType = {
     cvv: string,
     balance: number,
     isFrozen: boolean;
-    transactions: Transaction[]
+    transactions: TransactionType[]
 }
 
 type IconProps = {
@@ -23,8 +23,31 @@ type IconProps = {
     className?: string
 }
 
+type CardHeaderProps = {
+    currency: string,
+    balance: number,
+    loading: boolean,
+    isModalOpen: boolean,
+    handleToggleModal: () => void
+    handleAddNewCard: (string) => void,
+}
+
+type CardContentProps = {
+    cards: CardType[],
+    currentCardIndex: number,
+    handleSetCurrentCard: (number) => void,
+    handleToggleFreezeCard: () => void
+}
+
+type CardControlsProps = {
+    handleToggleFreezeCard: () => void
+}
+
 export {
     TransactionType,
     CardType,
-    IconProps
+    IconProps,
+    CardHeaderProps,
+    CardContentProps,
+    CardControlsProps
 }
