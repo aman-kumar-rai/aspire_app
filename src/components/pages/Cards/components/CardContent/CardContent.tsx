@@ -22,6 +22,8 @@ const CardContent = ({
 }: CardContentProps) => {
 
     const [showCardNumber, setShowCardNumber] = useState(false);
+    const [value, setValue] = useState("recentTransaction")
+
     const handleCardNumberVisibility = () => {
         setShowCardNumber(prev => !prev);
     }
@@ -36,6 +38,10 @@ const CardContent = ({
         dots: true,
         dotsClass: "",
         beforeChange: handleCardClick
+    }
+    
+    const handlevalueChange = (_value:string) =>{
+        setValue(_value)
     }
 
     return (
@@ -74,32 +80,61 @@ const CardContent = ({
                     />
                 </div>
                 <div className={styles.rightPanel}>
-                    <Accordion.Root type="single" defaultValue="recentTransaction" collapsible>
-                        <Accordion.Item className="AccordionItem" value="cardDetails">
-                            <AccordionTrigger disabled>
-                                <span className={styles.triggerHeading}>
-                                    <img src={CardDetails} alt="card details" className={styles.triggerLogo} />
-                                    <p>Card details</p>
+                    <Accordion.Root
+                    onValueChange={handlevalueChange}
+                     className={styles.accordionRoot} 
+                     type="single" 
+                     defaultValue={value} 
+                     collapsible
+                     >
+                        <Accordion.Item
+                        className={styles.accordionItem}
+                        value="cardDetails"
+                        >
+                            <AccordionTrigger
+                            disabled
+                            >
+                                <span 
+                                className={styles.triggerHeading}
+                                >
+                                    <img 
+                                    src={CardDetails}
+                                    alt="card details"
+                                    className={styles.triggerLogo}
+                                    />
+                                    <p>
+                                        Card details
+                                        </p>
                                 </span>
-                                <img src={DownArrow} className={styles.arrowLogo} />
+                                <img
+                                src={DownArrow}
+                                className={styles.arrowLogo}
+                                />
                             </AccordionTrigger>
                         </Accordion.Item>
-                        <Accordion.Item className={styles.accordionItem} value="recentTransaction">
+                        <Accordion.Item 
+                        className={styles.accordionItem} 
+                        value="recentTransaction"
+                        >
                             <AccordionTrigger>
-                                <span className={styles.triggerHeading}>
-                                    <img src={RecentTransaction} alt="recentTransaction" className={styles.triggerLogo} />
-                                    <p>Recent Transaction</p>
+                                <span 
+                                className={styles.triggerHeading}
+                                >
+                                    <img 
+                                    src={RecentTransaction}
+                                    alt="recentTransaction"
+                                    className={styles.triggerLogo}
+                                    />
+                                    <p>
+                                        Recent Transaction
+                                        </p>
                                 </span>
-                                <img src={DownArrow} className={styles.arrowLogo} />
+                                <img src={value === "recentTransaction" ? UpArrow : DownArrow} className={styles.arrowLogo} />
                             </AccordionTrigger>
                             <AccordionContent>
                                 <Transaction />
-                                <Transaction />
-                                <Transaction />
-                                <Transaction />
-                                <Transaction />
-                                <Transaction />
                             </AccordionContent>
+                            {value === "recentTransaction" && <button className={styles.showAllBtn}>View all card transactions</button>}
                         </Accordion.Item>
                     </Accordion.Root>
                 </div>
