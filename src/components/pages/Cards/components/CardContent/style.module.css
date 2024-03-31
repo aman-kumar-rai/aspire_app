@@ -55,3 +55,19 @@
 .leftPanel{
     width: 50%;
 }
+
+.triggerLogo{
+    width: 24px;
+    height: 24px;
+}
+
+.triggerHeading{
+    display: flex;
+    column-gap: var(--space-12);
+    align-items: center;
+}
+
+.arrowLogo{
+    width: 20px;
+    height: 20px;
+}

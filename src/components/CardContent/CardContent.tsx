@@ -1,37 +1,65 @@
-import { useState } from "react";
 import * as Tabs from "@radix-ui/react-tabs";
 import * as Accordion from "@radix-ui/react-accordion";
+import spendLimit from "@assets/spendLimit.png";
+import freezeCard from "@assets/freezeCard.png";
+import gPay from "@assets/gPay.png";
+import replaceCard from "@assets/replaceCard.png";
+import cancelCard from "@assets/cancelCard.png";
 import Eye from "@assets/eye.png";
 import DownArrow from "@assets/downArrow.png";
 import UpArrow from "@assets/upArrow.png";
 import CardDetails from "@assets/cardDetails.png";
 import RecentTransaction from "@assets/recentTransaction.png";
 
-import CardControls from "@/components/pages/Cards/components/CardControls/CardControls";
-import { AccordionContent, AccordionTrigger } from "@components/pages/Cards/components/Accordion/Accordion";
-import Transaction from "@components/pages/Cards/components/Transaction/Transaction";
-import CarouselItem from "@/components/pages/Cards/components/CarouselItem/CarouselItem";
-import { CardContentProps } from "@/types";
+import CardControls from "@/components/CardControls/CardControls";
+import { AccordionContent, AccordionTrigger } from "@components/Accordion/Accordion";
+import Transaction from "@components/Transaction/Transaction";
+import Card from "@/components/Card/Card";
+
 import styles from "./style.module.css";
+import { useState } from "react";
 
 
+const cardControllers = [
+    {
+        id: "freezeCard",
+        label: "Freeze Card",
+        icon: freezeCard
+    },
+    {
+        id: "spendLimit",
+        label: "Set Spend Limit",
+        icon: spendLimit
+    },
+    {
+        id: "gPay",
+        label: "Add to GPay",
+        icon: gPay
+    },
+    {
+        id: "replaceCard",
+        label: "Replace Card",
+        icon: replaceCard
+    },
+    {
+        id: "cancelCard",
+        label: "Cancel Card",
+        icon: cancelCard
+    },
+]
 const CardContent = ({
+    handleCard,
     cards,
-    currentCardIndex,
-    handleSetCurrentCard,
-    handleToggleFreezeCard
-}: CardContentProps) => {
-
-    const [showCardNumber, setShowCardNumber] = useState(false);
-
+    activeCard,
+}) => {
+    const [showCardNumber, setShowCardNumber] = useState(false)
     const handleCardNumberVisibility = () => {
-        setShowCardNumber(prev => !prev);
+        setShowCardNumber(prev => !prev)
     }
-
     return (
         <Tabs.Root defaultValue="myDebitCards">
             <Tabs.List className={styles.tabsList} aria-label="Manage your cards">
-                <Tabs.Trigger data-state={"active"} className={styles.tabsTrigger} value="myDebitCards">
+                <Tabs.Trigger data-state={"active"} className={`${styles.tabsTrigger} ${styles.activeTab}`} value="myDebitCards">
                     My debit cards
                 </Tabs.Trigger>
                 <Tabs.Trigger data-disabled disabled className={styles.tabsTrigger} value="allCompanyCards">
@@ -46,21 +74,18 @@ const CardContent = ({
                             {`${showCardNumber ? "hide" : "show"}`} card number
                         </button>
                     </div>
-
-                    <CarouselItem
-                        {...cards[currentCardIndex]}
-                    />
-
+                    <Card />
                     <CardControls
-                        handleToggleFreezeCard={handleToggleFreezeCard}
+                        controllers={cardControllers}
+                        handleCard={handleCard}
                     />
                 </div>
                 <div className={styles.rightPanel}>
-                <Accordion.Root type="single" defaultValue="recentTransaction" collapsible>
+                    <Accordion.Root type="single" defaultValue="recentTransaction" collapsible>
                         <Accordion.Item className="AccordionItem" value="cardDetails">
                             <AccordionTrigger disabled>
                                 <span className={styles.triggerHeading}>
-                                    <img src={CardDetails} alt="card details" className={styles.triggerLogo} />
+                                    <img src={gPay} alt="card details" className={styles.triggerLogo} />
                                     <p>Card details</p>
                                 </span>
                                 <img src={DownArrow} className={styles.arrowLogo} />
@@ -84,9 +109,9 @@ const CardContent = ({
                         </AccordionContent>
                     </Accordion.Item>
                 </Accordion.Root>
-                </div>
-            </Tabs.Content>
-        </Tabs.Root>
+            </div>
+        </Tabs.Content>
+        </Tabs.Root >
     )
 }
 

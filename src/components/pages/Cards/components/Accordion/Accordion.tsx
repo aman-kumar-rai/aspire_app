@@ -10,10 +10,9 @@ const AccordionTrigger = forwardRef(({ children, ...props }, ref) => {
                 ref={ref}
                 {...props}
             >
-                <span className={styles.accordion_trigger_content}>
+                <div className={styles.accordion_trigger_content}>
                     {children}
-                </span>
-                <span className={styles.accordion_trigger_icon}>X</span>
+                </div>
             </Accordion.Trigger>
         </Accordion.Header>
     )

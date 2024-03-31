@@ -3,7 +3,7 @@
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
-    width: 366px;
+    width: 100%;
     height: 72px;
     border-radius: 8px;
     padding: var(--space-24);
@@ -15,5 +15,13 @@
 .accordion_trigger_content {
     display: flex;
     flex-flow: row nowrap;
-    column-gap: 12px;
+    column-gap: var(--space-12);
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion_content{
+    padding: var(--space-24);
+    border: 1px solid gray;
 }
