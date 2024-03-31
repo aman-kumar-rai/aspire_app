@@ -19,19 +19,3 @@
 .tabSection{
     display: flex;
 }
-
-.main{
-    display: flex;
-    flex-direction: row;
-    padding: 60px 40px;
-    border-radius: 10px;
-    box-shadow: 2px 2px 2px 2px lightgray;
-}
-
-.leftPanel{
-
-}
-
-.rightPanel{
-
-}
