@@ -11,7 +11,7 @@ const Cards = () => {
     const [cards, setCards] = useState<CardType[]>(generateInitialCards);
     const [currentCardIndex, setCurrentCardIndex] = useState(0);
     const [loading, setLoading] = useState(false);
-    const [isAddCardModalOpen, setIsAddCardModalOpen] = useState(true);
+    const [isAddCardModalOpen, setIsAddCardModalOpen] = useState(false);
 
     const handleToggleAddCardModal = () => {
         setIsAddCardModalOpen(prevIsAddCardModalOpen => !prevIsAddCardModalOpen);

@@ -28,8 +28,7 @@ const CardContent = ({
         setShowCardNumber(prev => !prev);
     }
 
-    const handleCardClick = (prevIndex: number, currentIndex: number) => {
-        console.log(prevIndex);
+    const handleCardClick = (_: number, currentIndex: number) => {
         handleSetCurrentCard(currentIndex);
     }
 
