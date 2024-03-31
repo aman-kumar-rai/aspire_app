@@ -1,31 +1,25 @@
 import { formatDate } from "@/utils";
 import { TransactionProps } from "@/types";
 import Flight from "@assets/flight.png";
-import MegaPhone from "@assets/megaphone.png";
 import FileStorage from "@assets/fileStorage.png";
 import Business from "@assets/business.png";
 import Next from "@assets/next.png"
 import styles from "./style.module.css";
 
-const LOGOS = [
-    {
-        id: "flight",
-        icon: Flight
-    },
-    {
-        id: "megaPhone",
-        icon: MegaPhone
-    },
-    {
-        id: "fileStorage",
-        icon: FileStorage
+function getLogoIcon(type: string): { id: string, icon: string } {
+    if (type === "credit") {
+        return {
+            id: "fileStorage",
+            icon: FileStorage
+        }
     }
-]
-
-function getLogoIcon() {
-    return LOGOS[Math.floor(Math.random() * 3)]
+    else {
+        return {
+            id: "flight",
+            icon: Flight
+        }
+    }
 }
-
 
 const Transaction = ({
     type,
@@ -34,7 +28,7 @@ const Transaction = ({
     currency,
     amount
 }: TransactionProps) => {
-    const { id, icon } = getLogoIcon();
+    const { id, icon } = getLogoIcon(type);
     return (
         <div className={styles.container}>
             <div className={styles.leftBox}>
