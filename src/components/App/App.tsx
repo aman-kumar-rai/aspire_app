@@ -1,8 +1,12 @@
-import Settings from "@components/pages/Settings/Settings";
+import Sidebar from "@components/layout/Sidebar/Sidebar";
+import Main from "@components/layout/Main/Main";
 
 const App = () => {
     return (
-        <Settings />
+        <>
+            <Sidebar />
+            <Main />
+        </>
     )
 }
 
