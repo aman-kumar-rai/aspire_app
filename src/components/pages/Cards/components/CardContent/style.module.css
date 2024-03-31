@@ -94,8 +94,8 @@
 }
 
 .carousel {
-    margin: 0 auto;
     width: 400px;
+    padding-bottom: var(--space-56);
 }
 
 .carousel .slick-prev:before,

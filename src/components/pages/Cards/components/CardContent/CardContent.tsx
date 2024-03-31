@@ -29,14 +29,14 @@ const CardContent = ({
     }
 
     const handleCardClick = (prevIndex: number, currentIndex: number) => {
-        console.log(prevIndex, currentIndex);
+        console.log(prevIndex);
+        handleSetCurrentCard(currentIndex);
     }
 
     const settings = {
         autoplay: false,
         arrows: false,
         dots: true,
-        dotsClass: "",
         beforeChange: handleCardClick
     }
     

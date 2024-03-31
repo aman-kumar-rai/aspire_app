@@ -19,3 +19,15 @@ html, body, #root {
   flex-flow: row nowrap;
   font-family: "Open Sans", sans-serif;
 }
+
+.slick-dots li button:before {
+  font-size: var(--text-xxs) !important;
+  color: var(--secondary) !important;
+  opacity: 0.5 !important;
+}
+
+.slick-dots li.slick-active button:before {
+  font-size: var(--text-body) !important;
+  color: var(--secondary) !important;
+  opacity: 1 !important;
+}
