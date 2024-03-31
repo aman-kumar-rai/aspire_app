@@ -1,11 +1,14 @@
-import Card from "@/components/Card/Card";
-import CardControls from "@/components/CardControls/CardControls";
-
 import spendLimit from "@assets/spendLimit.png";
 import freezeCard from "@assets/freezeCard.png";
 import gPay from "@assets/gPay.png";
 import replaceCard from "@assets/replaceCard.png";
 import cancelCard from "@assets/cancelCard.png";
+
+import Card from "@/components/Card/Card";
+import CardHeader from "@components/CardHeader/CardHeader";
+import CardContent from "@components/CardContent/CardContent";
+import CardControls from "@/components/CardControls/CardControls";
+
 
 import styles from "./style.module.css";
 
@@ -38,12 +41,28 @@ const cardControllers = [
 ]
 
 const Cards = () => {
+
+    //* to control/handle currently visible card
     const handleCard = () => {
         console.log("handle Card")
     }
+
+    //* to open modal for new card
+    const onAddNewCard = () =>{
+        console.log("onAddNewCard")
+    }
+
+
     return (
         <div className={styles.container}>
-            <div className={styles.header}>
+            <CardHeader
+                balance={3000}
+                currency={"S$"}
+                onAddNewCard={onAddNewCard}
+            />
+            <CardContent
+            />
+            {/* <div className={styles.header}>
                 <p>
                     Available balance
                 </p>
@@ -52,7 +71,7 @@ const Cards = () => {
             <div className={styles.tabSection}>
                 <p>My Card</p>
                 <p>All Company Card</p>
-            </div>
+            </div> */}
             <div className={styles.main}>
                 <div className={styles.leftPanel}>
                     {/* <Card /> */}

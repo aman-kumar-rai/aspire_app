@@ -1,0 +1,58 @@
+.container{
+
+}
+
+.availableBalanceText{
+    font-size: var(--text-sm);
+    line-height: var(--line-height-xs);
+}
+
+.balanceAndNewCardSection{
+    display: flex;
+    justify-content: space-between;
+}
+
+.availableBalance{
+    display: flex;
+    column-gap: var(--space-8);
+    align-items: center;
+}
+
+h2{
+    margin: 0;
+}
+
+.newCardBtn{
+    all: unset;
+    cursor: pointer;
+    display: flex;
+    border-radius: 4px;
+    height: fit-content;
+    column-gap: var(--space-8);
+    padding: var(--space-8) var(--space-12);
+    background-color: var(--accent-dark);
+    align-items: center;
+    color: var(--neutral-white);
+    font-size: var(--text-xs);
+    line-height: var(--line-height-sm);
+    font-weight: var(--font-weight-bold);
+}
+
+.addIcon{
+    width: 16px;
+    height: 16px;
+}
+
+.currency{
+    width: 40px;
+    height: 25px;
+    align-items: center;
+    background-color: var(--secondary);
+    display: flex;
+    justify-content: center;
+    color: var(--neutral-white);
+    border-radius: 5px;
+    font-size: var(--text-xs);
+    line-height: var(--line-height-xs);
+    font-weight: var(--font-weight-bold);
+}
