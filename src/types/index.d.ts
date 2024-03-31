@@ -7,7 +7,7 @@ interface TransactionType {
     merchant: string
 }
 
-type CardType = {
+interface CardType {
     name: string,
     currency: Currency,
     cardNumber: string,
@@ -18,12 +18,12 @@ type CardType = {
     transactions: TransactionType[]
 }
 
-type IconProps = {
+interface IconProps {
     label: string,
     className?: string
 }
 
-type CardHeaderProps = {
+interface CardHeaderProps {
     currency: string,
     balance: number,
     loading: boolean,
@@ -32,19 +32,23 @@ type CardHeaderProps = {
     handleAddNewCard: (string) => void,
 }
 
-type CardContentProps = {
+interface CardContentProps {
     cards: CardType[],
     currentCardIndex: number,
     handleSetCurrentCard: (number) => void,
     handleToggleFreezeCard: () => void
 }
 
-type CardControlsProps = {
+interface CardControlsProps {
     handleToggleFreezeCard: () => void
 }
 
 interface TransactionProps extends TransactionType {
     currency: string
+}
+
+interface CarouselItemProps extends CardType {
+    showCardNumber: boolean
 }
 
 export {
@@ -54,5 +58,6 @@ export {
     IconProps,
     CardHeaderProps,
     CardContentProps,
-    CardControlsProps
+    CardControlsProps,
+    CarouselItemProps
 }

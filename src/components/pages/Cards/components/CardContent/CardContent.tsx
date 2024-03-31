@@ -70,6 +70,7 @@ const CardContent = ({
                             {cards.map(card => (
                                 <CarouselItem
                                     key={card.cardNumber}
+                                    showCardNumber={showCardNumber}
                                     {...card}
                                 />
                             ))}
