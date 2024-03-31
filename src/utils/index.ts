@@ -9,9 +9,9 @@ const formatExpiryDate = (date: Date): string => {
 }
 
 const formatDate = (date: Date): string => {
-    const year = date.getFullYear();
-    const month = date.getMonth();
     const day = date.getDate();
+    const month = date.toLocaleString('default', { month: 'short' });
+    const year = date.getFullYear();
 
     return `${day} ${month} ${year}`
 }
@@ -90,6 +90,7 @@ const generateTransactions = (size = 3): Transaction[] => {
 }
 
 export {
+    generateCardNumber,
     generateCard,
     formatExpiryDate,
     formatDate
