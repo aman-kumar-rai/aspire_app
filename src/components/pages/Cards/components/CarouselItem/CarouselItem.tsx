@@ -5,10 +5,11 @@ import { CardType } from "@/types";
 import { formatExpiryDate } from "@/utils";
 
 const Card = ({
-    name = "",
+    name,
     cardNumber,
-    cvv = "***",
-    expiry
+    expiry,
+    cvv,
+    isFrozen
 }: CardType) => {
     return (
         <div className={styles.container} key={cardNumber}>

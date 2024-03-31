@@ -30,8 +30,6 @@ const navItems = [
     },
 ]
 
-
-
 function getIcon(id: string, label: string, active: boolean) {
     switch (id) {
         case "cards":

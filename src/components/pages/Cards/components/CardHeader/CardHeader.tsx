@@ -1,11 +1,15 @@
 import Add from "@assets/add.png";
 import styles from "./style.module.css";
+import { CardHeaderProps } from "@/types";
+
 const CardHeader = ({
-    currency="S$",
+    currency = "S$",
     balance,
-    onAddNewCard,
-}) =>{
-    return(
+    isModalOpen,
+    handleAddNewCard,
+    handleToggleModal
+}: CardHeaderProps) => {
+    return (
         <div className={styles.container}>
             <span className={styles.availableBalanceText}>Available balance</span>
             <div className={styles.balanceAndNewCardSection}>
@@ -13,8 +17,8 @@ const CardHeader = ({
                     <span className={styles.currency}>{currency}</span>
                     <h2 className={styles.balance}>{balance}</h2>
                 </span>
-                <button onClick={onAddNewCard} className={styles.newCardBtn}>
-                    <img src={Add} className={styles.addIcon}/>
+                <button onClick={handleAddNewCard} className={styles.newCardBtn}>
+                    <img src={Add} className={styles.addIcon} />
                     New card
                 </button>
             </div>
