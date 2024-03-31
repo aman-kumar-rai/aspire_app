@@ -1,7 +1,8 @@
 import * as AccessibleIcon from "@radix-ui/react-accessible-icon";
 import styles from "./style.module.css";
+import { IconProps } from "@/types";
 
-const Cards = ({ label, className }) => {
+const Cards = ({ label, className }: IconProps) => {
     return (
         <AccessibleIcon.Root label={label}>
             <svg

@@ -1,13 +1,13 @@
 import { Currency } from "@faker-js/faker"
 
-type Transaction = {
+type TransactionType = {
     amount: number,
     type: "credit" | "debit",
     date: Date,
     merchant: string
 }
 
-type Card = {
+type CardType = {
     name: string,
     currency: Currency,
     cardNumber: string,
@@ -18,7 +18,13 @@ type Card = {
     transactions: Transaction[]
 }
 
+type IconProps = {
+    label: string,
+    className?: string
+}
+
 export {
-    Transaction,
-    Card
+    TransactionType,
+    CardType,
+    IconProps
 }

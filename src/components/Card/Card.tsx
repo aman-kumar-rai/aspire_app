@@ -1,35 +1,38 @@
 import Logo from "@components/icons/Logo/Logo";
 import Visa from "@assets/visa.png";
 import styles from "./style.module.css";
+import { CardType } from "@/types";
+import { formatExpiryDate } from "@/utils";
 
 const Card = ({
-    id,
-    cardHolderName = "",
+    name = "",
     cardNumber,
-    cvv="***",
-    isFrozen=false,
-    issuer = "VISA",
-    expiryDate
-}) => {
+    cvv = "***",
+    expiry
+}: CardType) => {
     return (
-        <div className={styles.container} key={id}>
-            <div className={styles.aspireLogo}><Logo label={"Aspire"} /></div>
+        <div className={styles.container} key={cardNumber}>
+            <div className={styles.aspireLogo}>
+                <Logo
+                    label={"Aspire"}
+                />
+            </div>
             <span className={styles.cardHolderName}>
-                {cardHolderName}
+                {name}
             </span>
             <div className={styles.cardDetails}>
                 <span className={styles.cardNumber}>{cardNumber}</span>
                 <div className={styles.cardDateCvvSection}>
                     <span className={styles.expiryDate}>
-                        Thru:{expiryDate}
+                        Thru:{formatExpiryDate(expiry)}
                     </span>
                     <span className={styles.cvv}>
-                        <span>CVV:</span> 
+                        <span>CVV:</span>
                         <span className={styles.cvvNumber}>{cvv}</span>
                     </span>
                 </div>
                 <div className={styles.type}>
-                    <img src={Visa} className={styles.visa}/>
+                    <img src={Visa} className={styles.visa} />
                 </div>
             </div>
         </div>

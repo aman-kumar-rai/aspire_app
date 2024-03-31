@@ -1,4 +1,5 @@
 import styles from "./style.module.css"
+
 const CardControls = ({
     controllers,
     handleCard

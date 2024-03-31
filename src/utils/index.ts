@@ -1,5 +1,5 @@
 import { Currency, faker } from "@faker-js/faker";
-import { Transaction, Card } from "@/types";
+import { TransactionType, CardType } from "@/types";
 
 const formatExpiryDate = (date: Date): string => {
     const month = date.getMonth();
@@ -48,7 +48,7 @@ const generateAmount = (min = 1000, max = 5000, dec = 2): number => {
     return Number(amount);
 }
 
-const generateCard = (name?: string, transactionsCount = 3): Card => {
+const generateCard = (name?: string, transactionsCount = 3): CardType => {
     return {
         name: name ? name : generateName(),
         currency: generateCurrency(),
@@ -70,7 +70,7 @@ const generatePastDate = (refDate: Date = new Date()): Date => {
     })
 }
 
-const generateTransaction = (min = 10, max = 500, dec = 2): Transaction => {
+const generateTransaction = (min = 10, max = 500, dec = 2): TransactionType => {
     return {
         amount: generateAmount(min, max, dec),
         type: Math.random() > 0.5 ? "credit" : "debit",
@@ -79,7 +79,7 @@ const generateTransaction = (min = 10, max = 500, dec = 2): Transaction => {
     }
 }
 
-const generateTransactions = (size = 3): Transaction[] => {
+const generateTransactions = (size = 3): TransactionType[] => {
     const transactions = [];
     for (let i = 0; i < size; i++) {
         transactions.push(generateTransaction())
