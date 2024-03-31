@@ -4,6 +4,7 @@ import {
     generateAmount,
     generateCVV,
     generateCard,
+    generateCardNumber,
     generateTransaction,
     generateTransactions
 } from "@/utils";
@@ -30,14 +31,12 @@ describe("formatDate() works", () => {
 
 })
 
-// describe("generateCardNumber() works", () => {
-//     // 16 for card length, 3 for separator
-//     it("generates a card number of length 19", () => {
-//         const cardNumber = generateCardNumber();
-//         console.log(cardNumber);
-//         expect(cardNumber).toHaveLength(16);
-//     })
-// })
+describe("generateCardNumber() works", () => {
+    it("generates a card number of correct length", () => {
+        const cardNumber = generateCardNumber();
+        expect(cardNumber).toHaveLength(16);
+    })
+})
 
 describe("generateCVV() works", () => {
     it("should have length 3", () => {

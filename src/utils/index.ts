@@ -24,10 +24,8 @@ const generateCurrency = (): Currency => {
     return faker.finance.currency();
 }
 
-const generateCardNumber = (issuer = "visa"): string => {
-    return faker.finance.creditCardNumber({
-        issuer
-    })
+const generateCardNumber = () => {
+    return String(Math.floor(Math.random() * 1e16));
 }
 
 const generateDate = (from: Date, to: Date): Date => {
