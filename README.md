@@ -39,8 +39,3 @@ Tests are written for page components which are fairly basic.
 
 ### 2. Accessing the hosted version
 Use [this link](https://fanciful-pithivier-fb61c7.netlify.app/) to use the hosted version of the app.
-
-## Points to note
-Refreshing a page on local setup would work fine. But, refreshing the deployed version would crash if it's not the home page, as the first page would be fetched from netlify web server. I haven't configured it to return home page for any path. 
-
-If I get time to add the config, will update the same here.
