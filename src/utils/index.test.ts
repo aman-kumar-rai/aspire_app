@@ -54,10 +54,10 @@ describe("generateAmount() works", () => {
     })
 
     it("generates amount with specified precision", () => {
-        const DEC = 3;
-        const amount = generateAmount(100, 1000, DEC);
+        const MIN = 100, MAX = 1000;
+        const amount = generateAmount(MIN, MAX);
         const amountAfterDecimal = String(amount).split(".")[1];
-        expect(amountAfterDecimal).toHaveLength(DEC);
+        expect(amountAfterDecimal).toHaveLength(2);
     })
 
 
