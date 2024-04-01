@@ -15,7 +15,7 @@ describe("formatExpiryDate() works", () => {
     it("formats expiry date correctly", () => {
         const date = new Date(2025, 6);
         const expiryDate = formatExpiryDate(date);
-        expect(expiryDate).toEqual("6 / 25");
+        expect(expiryDate).toEqual("6/25");
     })
 
 })

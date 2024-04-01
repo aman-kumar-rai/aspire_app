@@ -5,7 +5,7 @@ const formatExpiryDate = (date: Date): string => {
     const month = date.getMonth();
     const year = String(date.getFullYear());
 
-    return `${month} / ${year.slice(2)}`;
+    return `${month}/${year.slice(2)}`;
 }
 
 const formatDate = (date: Date): string => {

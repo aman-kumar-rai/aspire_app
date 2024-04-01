@@ -33,9 +33,24 @@ const CarouselItem = ({
                         </>
                         : (
                             <>
-                                <span className={`${styles.cardNumberPartHidden} ${styles.cardNumberPart}`}>....</span>
-                                <span className={`${styles.cardNumberPartHidden} ${styles.cardNumberPart}`}>....</span>
-                                <span className={`${styles.cardNumberPartHidden} ${styles.cardNumberPart}`}>....</span>
+                                <span className={styles.cardNumberPart}>
+                                    <span className={styles.dotSpan}></span>
+                                    <span className={styles.dotSpan}></span>
+                                    <span className={styles.dotSpan}></span>
+                                    <span className={styles.dotSpan}></span>
+                                </span>
+                                <span className={styles.cardNumberPart}>
+                                    <span className={styles.dotSpan}></span>
+                                    <span className={styles.dotSpan}></span>
+                                    <span className={styles.dotSpan}></span>
+                                    <span className={styles.dotSpan}></span>
+                                </span>
+                                <span className={styles.cardNumberPart}>
+                                    <span className={styles.dotSpan}></span>
+                                    <span className={styles.dotSpan}></span>
+                                    <span className={styles.dotSpan}></span>
+                                    <span className={styles.dotSpan}></span>
+                                </span>
                                 <span className={styles.cardNumberPart}>{cardNumber.slice(12)}</span>
                             </>
                         )}
@@ -43,7 +58,8 @@ const CarouselItem = ({
                 </span>
                 <div className={styles.cardDateCvvSection}>
                     <span className={styles.expiryDate}>
-                        Thru:{formatExpiryDate(expiry)}
+                        <span>Thru:</span>
+                        <span>{formatExpiryDate(expiry)}</span>
                     </span>
                     <span className={styles.cvv}>
                         <span>CVV:</span>
