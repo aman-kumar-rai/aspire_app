@@ -39,7 +39,7 @@ const CardControls = ({
 }: CardControlsProps) => {
 
 
-    const handleClick = (event) => {
+    const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
         const id = event.currentTarget.getAttribute("data-id");
         if (id === "freezeCard") {
             handleToggleFreezeCard();

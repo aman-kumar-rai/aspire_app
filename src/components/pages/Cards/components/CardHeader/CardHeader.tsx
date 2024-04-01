@@ -12,27 +12,27 @@ const CardHeader = ({
     handleToggleModal,
 }: CardHeaderProps) => {
     const [newCardName, setNewCardName] = useState({
-        value:"",
-        error:""
+        value: "",
+        error: ""
     });
 
-    const handleCardName = (event) =>{
-        const {value} = event.target;
+    const handleCardName = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const { value } = event.target;
         setNewCardName({
             value,
-            error:""
+            error: ""
         })
     }
 
-    const onSubmitNewCard = (event) =>{
+    const onSubmitNewCard = (event: React.MouseEvent<HTMLButtonElement>) => {
         // return
         event.preventDefault();
-        if(newCardName.value.trim().length<3){
-            setNewCardName(prev=>({...prev, error:"Card holder's name should be of atleast 3 letters"}))
+        if (newCardName.value.trim().length < 3) {
+            setNewCardName(prev => ({ ...prev, error: "Card holder's name should be of atleast 3 letters" }))
             return
         }
         handleAddNewCard(newCardName.value)
-        setNewCardName({value:"", error:""})
+        setNewCardName({ value: "", error: "" })
     }
 
     return (
@@ -57,7 +57,7 @@ const CardHeader = ({
                             <label className="Label" htmlFor="name">
                                 Card Holder's Name
                             </label>
-                            <input className={styles.inputArea} id="name" placeholder="Please enter card holder's name" value={newCardName.value} onChange={handleCardName}/>
+                            <input className={styles.inputArea} id="name" placeholder="Please enter card holder's name" value={newCardName.value} onChange={handleCardName} />
                             <li className={styles.errorMsg}>{newCardName.error}</li>
                             <div className={styles.btnSection}>
                                 <button className={styles.cancelBtn} type="button" aria-label="Close" onClick={handleToggleModal}>Cancel</button>
