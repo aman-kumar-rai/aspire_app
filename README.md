@@ -5,7 +5,11 @@
 
 2. ***vitest***: Testing framework providing test runner and asssertion support.
 
+Tests written are not full proof. Coverage is not as desired.
+
 3. ***react testing library***: Component testing framework. It isn't a single library, but a few libraries that helps render a component in a headless browser and run tests on it.
+
+Tests are written for page components which are fairly basic.
 
 4. ***react-slick***: Provides a simple and configurable API to create carousels.
 
@@ -35,3 +39,8 @@
 
 ### 2. Accessing the hosted version
 Use [this link](https://fanciful-pithivier-fb61c7.netlify.app/) to use the hosted version of the app.
+
+## Points to note
+Refreshing a page on local setup would work fine. But, refreshing the deployed version would crash if it's not the home page, as the first page would be fetched from netlify web server. I haven't configured it to return home page for any path. 
+
+If I get time to add the config, will update the same here.
