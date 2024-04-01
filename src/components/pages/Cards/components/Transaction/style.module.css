@@ -1,5 +1,6 @@
 .container{
     display: flex;
+    justify-content: space-between;
     column-gap: var(--space-20);
     padding: var(--space-24);
     border-bottom: 1px solid var(--neutral-accordion-border);
