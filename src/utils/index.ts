@@ -79,9 +79,9 @@ const generatePastDate = (refDate: Date = new Date()): Date => {
     })
 }
 
-const generateTransaction = (min = 10, max = 500, dec = 2): TransactionType => {
+const generateTransaction = (min = 10, max = 500): TransactionType => {
     return {
-        amount: generateAmount(min, max, dec),
+        amount: generateAmount(min, max),
         type: Math.random() > 0.5 ? "credit" : "debit",
         date: generatePastDate(),
         merchant: faker.company.name()
