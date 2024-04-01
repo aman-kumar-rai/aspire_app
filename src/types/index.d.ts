@@ -40,7 +40,8 @@ interface CardContentProps {
 }
 
 interface CardControlsProps {
-    handleToggleFreezeCard: () => void
+    handleToggleFreezeCard: () => void,
+    isFrozen: boolean
 }
 
 interface TransactionProps extends TransactionType {

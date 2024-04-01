@@ -35,7 +35,8 @@ const controls = [
 ];
 
 const CardControls = ({
-    handleToggleFreezeCard
+    handleToggleFreezeCard,
+    isFrozen
 }: CardControlsProps) => {
 
 
@@ -52,7 +53,9 @@ const CardControls = ({
                 return (
                     <div key={id} className={styles.buttonContainer} onClick={handleClick} data-id={id}>
                         <img src={icon} width={"32px"} height={"32px"} alt={label} />
-                        <p className={styles.buttonDetails}>{label}</p>
+                        <p className={styles.buttonDetails}>{
+                            id === "freezeCard" ? (isFrozen ? "Unfreeze card" : label) : label
+                        }</p>
                     </div>
                 )
             })}

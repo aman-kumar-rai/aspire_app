@@ -1,4 +1,5 @@
 import { useState } from "react";
+// @ts-ignore
 import Slider from "react-slick";
 import * as Tabs from "@radix-ui/react-tabs";
 import * as Accordion from "@radix-ui/react-accordion";
@@ -78,6 +79,7 @@ const CardContent = ({
                     </div>
 
                     <CardControls
+                        isFrozen={currentCard.isFrozen}
                         handleToggleFreezeCard={handleToggleFreezeCard}
                     />
                 </div>
