@@ -34,6 +34,7 @@
     flex-flow: column nowrap;
     column-gap: var(--space-16);
     align-items: center;
+    cursor: pointer;
 }
 
 .activeNav{
@@ -66,5 +67,10 @@
         color: var(--neutral-white);
         column-gap: var(--space-16);
         flex-flow: row nowrap;
+    }
+
+    .activeNav{
+        color:var(--secondary);
+        font-weight: var(--font-weight-bold);
     }
 }
