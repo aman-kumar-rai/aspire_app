@@ -23,8 +23,10 @@
 }
 
 .accordion_content{
-    padding: var(--space-24);
+    padding: var(--space-12);
     padding-bottom: 0;
+    max-height: 30vh;
+    overflow: auto;
 }
 
 .accordion_header{

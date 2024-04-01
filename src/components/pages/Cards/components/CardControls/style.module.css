@@ -1,8 +1,8 @@
 .container{
     display: flex;
     flex-direction: row;
-    column-gap: var(--space-32);
-    padding: 20px 30px;
+    column-gap: var(--space-12);
+    padding: var(--space-16);
     border-radius: 16px;
     background-color: var(--bg-card-button-container);
 }

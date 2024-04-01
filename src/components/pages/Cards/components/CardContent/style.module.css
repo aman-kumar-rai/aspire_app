@@ -16,6 +16,7 @@
 
 .rightPanel{
     flex-grow: 1;
+    padding: 10px;
     padding-top: var(--space-32);
 }
 
@@ -46,7 +47,7 @@
     border-radius: 10px;
     margin-top: 20px;
     box-shadow: 2px 2px 2px 2px lightgray;
-    column-gap: var(--text-xl);
+    /* column-gap: 5%; */
 }
 
 .eye{
