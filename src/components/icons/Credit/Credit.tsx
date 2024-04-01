@@ -3,6 +3,10 @@ import styles from "./style.module.css";
 import { IconProps } from "@/types";
 
 const Credit = ({ label, className }: IconProps) => {
+    const viewportWidth = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+    const _className = className === "active" ? styles.active: (viewportWidth > 576? styles.icon: styles.mobileIcon)
+
+
     return (
         <AccessibleIcon.Root label={label}>
             <svg
@@ -10,7 +14,7 @@ const Credit = ({ label, className }: IconProps) => {
                 width="24"
                 height="24"
                 viewBox="0 0 26 26"
-                className={className === "active" ? styles.active : styles.icon}
+                className={_className}
             >
                 <g transform="translate(-1 4.499)">
                     <g transform="translate(1.5 -4)">

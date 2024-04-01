@@ -2,6 +2,10 @@
     fill: var(--neutral-white);
 }
 
+.mobileIcon {
+    fill: var(--neutral-right-section-box-shadow);
+}
+
 .active{
     fill:var(--secondary)
 }
