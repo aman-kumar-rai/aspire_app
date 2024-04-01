@@ -25,8 +25,15 @@
 .accordion_content{
     padding: var(--space-12);
     padding-bottom: 0;
-    max-height: 30vh;
-    overflow: auto;
+}
+
+@media screen and (min-width: 576px) {
+    .accordion_content{
+        padding: var(--space-12);
+        padding-bottom: 0;
+        max-height: 30vh;
+        overflow: auto;
+    }
 }
 
 .accordion_header{

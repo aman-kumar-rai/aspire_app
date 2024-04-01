@@ -41,7 +41,7 @@
     font-weight: var(--font-weight-bold);
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 576px) {
     .container {
         width: 300px;
         padding: var(--space-48);

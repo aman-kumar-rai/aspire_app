@@ -3,8 +3,16 @@
     flex-direction: row;
     column-gap: var(--space-12);
     padding: var(--space-16);
-    border-radius: 16px;
+    border-radius: 16px 16px 0 0;
+    justify-content: space-between;
     background-color: var(--bg-card-button-container);
+}
+
+@media screen and (min-width: 576px) {
+    .container{
+        border-radius: 16px;
+    }
+
 }
 
 .buttonContainer{

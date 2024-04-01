@@ -1,30 +1,32 @@
-.tabsList {
-    display: flex;
-    column-gap: var(--space-32);
-    margin-top: var(--space-32);
-  }
-
 .tabsTrigger{
-    /* all: unset; */
     font-size: var(--text-sm);
     line-height: var(--line-height-md);
     border: none;
     border-bottom: 2px solid transparent;
     background: transparent;
     cursor: pointer;
+    color: var(--neutral-white);
 }
+
 
 .rightPanel{
     flex-grow: 1;
-    width: 400px;
-    padding: 10px;
-    padding-top: var(--space-32);
+    /* padding-top: var(--space-32); */
+    padding: var(--space-24);
+    background-color: var(--neutral-white);
 }
 
-@media  (max-width: 1200px) {
-    .rightPanel{
-        width: 200px;
-    }
+.tabsList {
+    padding: var(--space-12);
+    display: flex;
+    column-gap: var(--space-32);
+    margin-top: var(--space-32);
+}
+
+.tabsContent{
+    display: flex;
+    flex-flow: column nowrap;
+    margin-top: 20px;
 }
 
 
@@ -45,15 +47,6 @@
 
 .tabsTrigger[data-state='active']{
     border-bottom: 2px solid var(--accent-light);
-} 
-
-.tabsContent{
-    display: flex;
-    padding: 60px 40px;
-    border-radius: 10px;
-    margin-top: 20px;
-    box-shadow: 2px 2px 2px 2px lightgray;
-    /* column-gap: 5%; */
 }
 
 .eye{
@@ -61,11 +54,7 @@
     height: var(--text-body);
 }
 
-.btnDiv{
-    display: flex;
-    justify-content: end;
-    margin-bottom: var(--text-xxs);
-}
+
 
 .btn{
     display: flex;
@@ -78,11 +67,9 @@
     line-height: var(--line-height-md);
     align-items: center;
     cursor: pointer;
+    border-radius: 5px 5px 0 0;
 }
 
-.leftPanel{
-    width: 50%;
-}
 
 .triggerLogo{
     width: 24px;
@@ -100,8 +87,15 @@
     height: 20px;
 }
 
+.btnDiv{
+    display: flex;
+    justify-content: end;
+    margin-right: var(--space-12);
+}
+
 .carousel {
-    width: 400px;
+    width: 100%;
+    padding: 0 var(--space-12);
     padding-bottom: var(--space-56);
 }
 
@@ -121,3 +115,64 @@
     line-height: var(--line-height-sm);
     cursor: pointer;
     }
+
+
+@media screen and (min-width: 576px) {
+    .tabsContent{
+        border-radius: 10px;
+        box-shadow: 2px 2px 2px 2px lightgray;
+        flex-flow: row nowrap;    
+        padding: 60px 40px;
+    }
+
+    .tabsTrigger {
+        color: var(--primary);
+    }
+
+    .tabsList {
+        padding: 0;
+    }
+
+    .leftPanel{
+        width: 50%;
+    }
+    .rightPanel{
+        flex-grow: 1;
+        width: 400px;
+        padding: 10px;
+        padding-top: var(--space-32);
+        background-color: transparent
+    }
+
+    .btnDiv{
+        margin-bottom: var(--text-xxs);
+    }
+
+    .btn{
+        border-radius: 0;
+    }
+    
+    .carousel {
+        width: 400px;
+        padding-bottom: var(--space-56);
+    }
+}
+
+@media screen and (max-width:1279px) {
+    .tabsContent{
+        flex-flow: column nowrap;
+    }
+
+    .leftPanel{
+        width: 100%;
+    }
+
+    .rightPanel{
+        width: 100%;
+        padding: var(--space-32) 0;
+    }
+
+    .carousel {
+        width: 100%;
+    }
+}
