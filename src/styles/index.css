@@ -16,9 +16,16 @@ html, body, #root {
 
 #root {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: column-reverse nowrap;
   font-family: "Open Sans", sans-serif;
 }
+
+@media screen and (min-width: 600px) {
+  #root {
+    flex-flow: row nowrap;
+  }
+}
+
 
 .slick-dots li button:before {
   font-size: var(--text-xxs) !important;

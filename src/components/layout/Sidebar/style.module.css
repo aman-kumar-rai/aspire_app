@@ -1,18 +1,14 @@
 .container {
     display: flex;
-    flex-direction: column;
+    flex-flow: column nowrap;
+    width: 100%;
     row-gap: var(--space-80);
-    width: 300px;
-    min-height: 100%;
     height: fit-content;
-    padding: var(--space-48);
-    background-color: var(--primary);
+    background-color: var(--neutral-white);
 }
 
-.header{
-    display: flex;
-    flex-direction: column;
-    row-gap: var(--space-20);
+.header {
+    display: none;
 }
 
 .description{
@@ -25,24 +21,50 @@
 
 .navbar{
     display: flex;
-    flex-direction: column;
-    row-gap: var(--space-60);
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: var(--space-16);
+    column-gap: var(--space-16);
 }
 
 .nav{
     all: unset;
-    color: var(--neutral-white);
+    color: var(--text-sidebar-mobile);
     display: flex;
+    flex-flow: column nowrap;
     column-gap: var(--space-16);
-    align-items: center;
-    font-size: var(--text-body);
-    line-height: var(--line-height-xl);
-    font-family: var(--font-primary);
-    cursor: pointer;
     align-items: center;
 }
 
 .activeNav{
     color:var(--secondary);
     font-weight: var(--font-weight-bold);
+}
+
+@media screen and (min-width: 600px) {
+    .container {
+        width: 300px;
+        padding: var(--space-48);
+        min-height: 100%;
+        background-color: var(--primary);
+    }
+
+    .header {
+        display: flex;
+        flex-direction: column;
+        row-gap: var(--space-20);
+    }
+
+    .navbar {
+        row-gap: var(--space-60);
+        display: flex;
+        flex-flow: column nowrap;
+        column-gap: var(--space-16);
+    }
+
+    .nav{
+        color: var(--neutral-white);
+        column-gap: var(--space-16);
+        flex-flow: row nowrap;
+    }
 }
