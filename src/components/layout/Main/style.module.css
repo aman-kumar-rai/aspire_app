@@ -3,4 +3,5 @@
     flex-grow: 1;
     background-color: var(--neutral-white);
     padding: var(--space-60);
+    overflow: auto;
 }

@@ -12,7 +12,8 @@
 }
 
 .aspireLogo{
-    text-align: end;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .cardHolderName{
@@ -59,7 +60,8 @@
 }
 
 .type{
-    text-align: end;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .visa{
