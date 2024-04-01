@@ -24,12 +24,16 @@ const generateCurrency = (): Currency => {
     return faker.finance.currency();
 }
 
-const generateCardNumber = () => {
-    let cardNumber = "";
-    for (let i = 0; i < 16; i++) {
-        cardNumber += Math.ceil((Math.random() * 10)) % 10
+const generateNumericString = (size: number) => {
+    let value = "";
+    for (let i = 0; i < size; i++) {
+        value += Math.ceil((Math.random() * 10)) % 10;
     }
-    return cardNumber;
+    return value;
+}
+
+const generateCardNumber = () => {
+    return generateNumericString(16);
 }
 
 const generateDate = (from: Date, to: Date): Date => {
@@ -44,11 +48,13 @@ const generateCVV = (): string => {
 }
 
 const generateAmount = (min = 1000, max = 5000): number => {
-    const amount = faker.finance.amount({
+    const wholeAmount = Math.floor(Number(faker.finance.amount({
         min,
         max
-    })
-    return Number(Number(amount).toFixed(2));
+    })));
+
+    const decimalAmount = generateNumericString(2);
+    return Number(`${wholeAmount}.${decimalAmount}`)
 }
 
 const generateCard = (name?: string, transactionsCount = 3): CardType => {

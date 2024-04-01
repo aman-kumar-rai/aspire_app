@@ -56,8 +56,11 @@ describe("generateAmount() works", () => {
     it("generates amount with specified precision", () => {
         const MIN = 100, MAX = 1000;
         const amount = generateAmount(MIN, MAX);
-        const amountAfterDecimal = String(amount).split(".")[1];
-        expect(amountAfterDecimal).toHaveLength(2);
+        const amountPortions = String(amount).split(".");
+        const decimalPlacesCount = amountPortions.length === 1 ? 0 : amountPortions[1].length
+
+        // for values like 100.40 or 500
+        expect(decimalPlacesCount).toBeLessThanOrEqual(2);
     })
 
 
